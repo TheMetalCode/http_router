@@ -6,3 +6,4 @@ Gemfile.lock
 .rvmrc
 *.rbc
 js/npm-debug.log
+.ruby-version
