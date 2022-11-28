@@ -163,7 +163,7 @@ end
 
 begin
   require 'rake/rdoctask'
-rescue 
+rescue LoadError
   require 'rdoc/task'
 end
 desc "Generate documentation"
