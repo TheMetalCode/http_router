@@ -161,17 +161,17 @@ namespace :test do
   end
 end
 
-# begin
-#   require 'rake/rdoctask'
-# rescue
-#   require 'rdoc/task'
-# end
-# desc "Generate documentation"
-# Rake::RDocTask.new do |rd|
-#   rd.main = "README.md"
-#   rd.rdoc_files.include("README.md", "lib/**/*.rb")
-#   rd.rdoc_dir = 'rdoc'
-# end
+begin
+  require 'rake/rdoctask'
+rescue LoadError
+  require 'rdoc/task'
+end
+desc "Generate documentation"
+Rake::RDocTask.new do |rd|
+  rd.main = "README.md"
+  rd.rdoc_files.include("README.md", "lib/**/*.rb")
+  rd.rdoc_dir = 'rdoc'
+end
 
 require 'code_stats'
 CodeStats::Tasks.new
